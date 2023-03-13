@@ -2,9 +2,10 @@ import Config
 
 # Configure your database
 config :mmordle, Mmordle.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "postgres_dev_user",
+  password: "postgres_dev_passwd",
   hostname: "localhost",
+  port: 54327,
   database: "mmordle_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,

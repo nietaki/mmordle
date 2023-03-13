@@ -1,17 +1,21 @@
 # Mmordle.Umbrella
 
-We are almost there! The following steps are missing:
+To start the dockerised postgres instance
 
-    $ cd mmordle_umbrella
+    docker compose up -d
 
-Then configure your database in config/dev.exs and run:
+To stop the db and remove its data
 
-    $ mix ecto.create
+    docker compose down -v
 
-Start your Phoenix app with:
+To create the db run
 
-    $ mix phx.server
+    mix ecto.create
+
+Start the Phoenix app with:
+
+    mix phx.server
 
 You can also run your app inside IEx (Interactive Elixir) as:
 
-    $ iex -S mix phx.server
+    iex -S mix phx.server

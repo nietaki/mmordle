@@ -6,9 +6,10 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :mmordle, Mmordle.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "postgres_dev_user",
+  password: "postgres_dev_passwd",
   hostname: "localhost",
+  port: 54327,
   database: "mmordle_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
