@@ -36,6 +36,9 @@ jobs:
       - run: mix deps.get
       - run: mix test
       - run: mix format --check-formatted
+        # this way we don't compile twice, once for dev and once for test env
+        env:
+          MIX_ENV: test
 
       # Don't cache PLTs based on mix.lock hash, as Dialyzer can incrementally update even old ones
       # Cache key based on Elixir & Erlang version (also useful when running in matrix)
