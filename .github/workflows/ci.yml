@@ -17,13 +17,14 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-        # ports: 54327:5432
+        ports:
+          - 54327:5432
     runs-on: ubuntu-latest
     name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
     strategy:
       matrix:
-        otp: ['25.3']
-        elixir: ['1.13.0', '1.14.3']
+        otp: ["25.3"]
+        elixir: ["1.13.0", "1.14.3"]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Elixir
@@ -55,4 +56,3 @@ jobs:
 
       # - name: Run dialyzer
       #   run: mix dialyzer --format github
-
