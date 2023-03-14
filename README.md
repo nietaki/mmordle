@@ -22,7 +22,7 @@ You can also run your app inside IEx (Interactive Elixir) as:
 
 ### What's the word list that you're using?
 
-A combination of Linux's dict and https://en.lexipedia.org/:
+A combination of Linux's `words` and https://en.lexipedia.org/:
 
 ```bash
 $ cat en_wikt_words_100_5-5.txt | sed "s/ .*$//g" | sort | uniq > wiki_words.txt
