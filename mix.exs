@@ -8,7 +8,7 @@ defmodule Mmordle.Umbrella.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases(),
-      dialyzer: [ plt_file: {:no_warn, "priv/plts/dialyzer.plt"}]
+      dialyzer: [plt_file: {:no_warn, "priv/plts/dialyzer.plt"}]
     ]
   end
 
