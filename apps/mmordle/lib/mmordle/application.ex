@@ -13,9 +13,10 @@ defmodule Mmordle.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Mmordle.PubSub},
       # Start Finch
-      {Finch, name: Mmordle.Finch}
+      {Finch, name: Mmordle.Finch},
       # Start a worker by calling: Mmordle.Worker.start_link(arg)
       # {Mmordle.Worker, arg}
+      {Mmordle.GameServer, initial_target: "words", name: Mmordle.GameServer}
     ]
 
     Supervisor.start_link(children, strategy: :one_for_one, name: Mmordle.Supervisor)
