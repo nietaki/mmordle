@@ -1,0 +1,11 @@
+Current fake temperature: <%= @temperature %>
+<br />
+Target word: <%= @game_state.target %>
+<%= for guess <- @game_state.guesses do %>
+  <p> <%= guess %> </p>
+<% end %>
+
+<.form for={@form} phx-change="validate" phx-submit="guess_it">
+  <.input type="text" field={@form[:guess]} />
+  <button>Guess it!</button>
+</.form>

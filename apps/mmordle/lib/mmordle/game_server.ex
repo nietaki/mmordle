@@ -37,4 +37,9 @@ defmodule Mmordle.GameServer do
       {:error, reason} -> {:reply, {:rejected, state, reason}, state}
     end
   end
+
+  @impl true
+  def handle_call(:get_state, _from, %GameState{} = state) do
+    {:reply, state, state}
+  end
 end
