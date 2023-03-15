@@ -22,7 +22,7 @@ defmodule Mmordle.GameServer do
   @impl true
   def handle_call({:guess, word}, _from, %GameState{} = state) do
     if GameState.finished?(state) do
-      {:error, "game is finished"}
+      {:reply, {:rejected, state, "game is finished"}, state}
     else
       case GameState.guess(state, word) do
         {:ok, state} -> {:reply, {:accepted, state}, state}

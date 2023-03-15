@@ -15,7 +15,7 @@ defmodule MmordleWeb.Live.GameLive do
       socket
       |> assign(:temperature, temperature)
       |> assign(:game_state, state)
-      |> assign(:form, to_form(%{}))
+      |> assign(:input_id, Mmordle.Utils.random_string(10))
 
     {:ok, assign(socket, :temperature, temperature)}
   end
@@ -29,10 +29,8 @@ defmodule MmordleWeb.Live.GameLive do
         {:rejected, state, _reason} -> assign(socket, :game_state, state)
       end
 
+    socket = assign(socket, :input_id, Mmordle.Utils.random_string(10))
     IO.inspect(socket)
-
-    socket = socket
-    |> assign(:form, to_form(%{}))
 
     {:noreply, socket}
   end
@@ -41,7 +39,6 @@ defmodule MmordleWeb.Live.GameLive do
     IO.puts("other event")
     IO.inspect(name)
     IO.inspect(value)
-    IO.inspect(socket.assigns.form)
     {:noreply, socket}
   end
 end

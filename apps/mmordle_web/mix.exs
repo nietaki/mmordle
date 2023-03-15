@@ -23,6 +23,7 @@ defmodule MmordleWeb.MixProject do
   def application do
     [
       mod: {MmordleWeb.Application, []},
+      # extra_applications: [:logger, :runtime_tools, :mmordle]
       extra_applications: [:logger, :runtime_tools]
     ]
   end

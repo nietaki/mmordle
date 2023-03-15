@@ -5,7 +5,8 @@ Target word: <%= @game_state.target %>
   <p> <%= guess %> </p>
 <% end %>
 
-<.form for={@form} phx-change="validate" phx-submit="guess_it">
-  <.input type="text" field={@form[:guess]} />
+
+<form phx-change="validate" phx-submit="guess_it">
+  <input type="text" name="guess" id={"#{@input_id}"} />
   <button>Guess it!</button>
-</.form>
+</form>

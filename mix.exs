@@ -48,4 +48,10 @@ defmodule Mmordle.Umbrella.MixProject do
       setup: ["cmd mix setup"]
     ]
   end
+
+  # def application do
+  #   [
+  #     extra_applications: [:mmordle]
+  #   ]
+  # end
 end
